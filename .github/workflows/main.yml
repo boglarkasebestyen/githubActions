@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         node-version: [12.x]
@@ -27,7 +27,7 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
-          AWS_S3_BUCKET: ${{ github-actions-jest }}
-          AWS_ACCESS_KEY_ID: ${{ AKIAU3N5H3S5ODK2XGXO }}
-          AWS_SECRET_ACCESS_KEY: ${{ 6IusmVICl0mYJNaR4yMTkeZATky9dExzvPbdHkQ }}
+          AWS_S3_BUCKET: ${{ secrets.github-actions-jest }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AKIAU3N5H3S5ODK2XGXO }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.6IusmVICl0mYJNaR4yMTkeZATky9dExzvPbdHkQ/ }}
           AWS_REGION: "us-west-1" 
